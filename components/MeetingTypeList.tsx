@@ -154,7 +154,12 @@ const MeetingTypeList = () => {
         title="Type the link here"
         className="text-center"
         buttonText="Join Meeting"
-        handleClick={() => router.push(values.link)}
+        handleClick={() => {
+            // split by / 
+            const link = values.link.split('/');
+            // join except the first element  
+            router.push(link.slice(1).join('/'))}
+        }
       >
         <Input
           placeholder="Meeting link"
